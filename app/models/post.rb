@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
     binding.pry
     if title.include?("Won't Believe")
       errors[:base] << "title cannot be #{title}"
-
+end
     #elsif title.donwcase.include?("top #{(1..1000)}")
     #  errors[:base] << "title cannot be #{title}"
 
