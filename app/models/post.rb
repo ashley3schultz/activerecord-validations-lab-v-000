@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
     #elsif title.donwcase.include?("guess")
     #  errors[:base] << "title cannot be #{title}"
 
-  else title.include?("Secret")
+  else title == "Secret"
       errors[:base] << "title cannot be #{title}"
     end
   end
