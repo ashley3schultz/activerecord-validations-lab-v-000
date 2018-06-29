@@ -5,11 +5,10 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: { in: %w(Fiction) }
   validate_with MyValidator
 
-end
+  private
 
-class Post::MyValidator < ActiveModel::Validator
-  def validate(record)
-    if record.title.donwcase == "won't believe"
+  def MyValidator(record)
+    if record.title.donwcase.include?("won't believe")
       record.errors[:base] << "title cannot be '#{title}'"
 
     elsif record.title.donwcase == "secret"
@@ -22,4 +21,5 @@ class Post::MyValidator < ActiveModel::Validator
       record.errors[:base] << "title cannot be '#{title}'"
     end
   end
+
 end
