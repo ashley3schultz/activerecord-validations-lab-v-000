@@ -17,8 +17,8 @@ class Post < ActiveRecord::Base
     #elsif title && !title.include?("Top")
     #  errors[:base] << "title cannot be #{title}"
 
-    #else title && !title.include?("Secret")
-    #  errors[:base] << "title cannot be #{title}"
+    else title && !title.include?("Secret")
+      errors[:base] << "title cannot be #{title}"
     end
   end
 
