@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   private
 
   def myvalidator
-    
+
     if title.donwcase.include?("won't believe")
       errors[:base] << "title cannot be #{title}"
 
