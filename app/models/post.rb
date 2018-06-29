@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: { in: %w(Fiction) }
   validate_with MyValidator
 
-  class MyValidator < ActiveModel::Validator
+  class Post::MyValidator < ActiveModel::Validator
     def validate(record)
       if record.title.donwcase == "won't believe"
         record.errors[:base] << "title cannot be '#{title}'"
@@ -22,3 +22,6 @@ class Post < ActiveRecord::Base
     end
   end
 end
+
+
+
