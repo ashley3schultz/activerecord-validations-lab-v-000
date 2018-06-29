@@ -8,19 +8,18 @@ class Post < ActiveRecord::Base
   private
 
   def title_clickbait
-    #binding.pry
     if title && !title.include?("Won't Believe")
       errors[:base] << "title cannot be #{title}"
-end
-    #elsif title.donwcase.include?("top #{(1..1000)}")
-    #  errors[:base] << "title cannot be #{title}"
 
-    #elsif title.donwcase.include?("guess")
-    #  errors[:base] << "title cannot be #{title}"
+    elsif title && !title.include?("Guess")
+      errors[:base] << "title cannot be #{title}"
 
-  #else title == "Secret"
-  #    errors[:base] << "title cannot be #{title}"
-  #  end
+    elsif title && !title.include?("Top")
+      errors[:base] << "title cannot be #{title}"
+
+    else title && !title.include?("Secret")
+      errors[:base] << "title cannot be #{title}"
+    end
   end
 
 end
