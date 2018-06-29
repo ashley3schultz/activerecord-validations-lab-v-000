@@ -25,7 +25,7 @@ class MyValidator < ActiveModel::Validator
     elsif record.title.donwcase == "guess"
       record.errors[:base] << "title cannot be '#{title}'"
 
-    elsif record.title.donwcase == "top #{(1..1000)}"
+    else record.title.donwcase == "top #{(1..1000)}"
       record.errors[:base] << "title cannot be '#{title}'"
     end
   end
