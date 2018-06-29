@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   private
 
   def title_clickbait
-
+    binding.pry
     title["Won't Believe"]
       #errors[:base] << "title cannot be #{title}"
 
