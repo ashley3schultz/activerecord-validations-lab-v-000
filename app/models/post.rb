@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
 
   def myvalidator
 
-    if title.donwcase.include?("won't believe")
+    if title.include?("Won't Believe")
       errors[:base] << "title cannot be #{title}"
 
     #elsif title.donwcase.include?("top #{(1..1000)}")
@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
     #elsif title.donwcase.include?("guess")
     #  errors[:base] << "title cannot be #{title}"
 
-    else title.donwcase.include?("secret")
+  else title.include?("Secret")
       errors[:base] << "title cannot be #{title}"
     end
   end
