@@ -8,17 +8,8 @@ class Post < ActiveRecord::Base
   private
 
   def title_clickbait
-    if title && !title.include?("Won't Believe") && !title.include?("Secret")
+    if title && !title.include?("Won't Believe") && !title.include?("Secret") && !title.include?("Guess") && !title.include?("Top")
       errors[:base] << "title cannot be #{title}"
-
-    #elsif title && !title.include?("Guess")
-    #  errors[:base] << "title cannot be #{title}"
-
-    #elsif title && !title.include?("Top")
-    #  errors[:base] << "title cannot be #{title}"
-
-    #else title && !title.include?("Secret")
-    #  errors[:base] << "title cannot be #{title}"
     end
   end
 
