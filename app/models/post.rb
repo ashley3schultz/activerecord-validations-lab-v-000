@@ -8,17 +8,18 @@ class Post < ActiveRecord::Base
   private
 
   def myvalidator
-    if record.title.donwcase.include?("won't believe")
+    
+    if title.donwcase.include?("won't believe")
       errors[:base] << "title cannot be #{title}"
 
-    elsif record.title.donwcase == "secret"
-      record.errors[:base] << "title cannot be #{title}"
+    #elsif title.donwcase.include?("top #{(1..1000)}")
+    #  errors[:base] << "title cannot be #{title}"
 
-    elsif record.title.donwcase == "guess"
-      record.errors[:base] << "title cannot be #{title}"
+    #elsif title.donwcase.include?("guess")
+    #  errors[:base] << "title cannot be #{title}"
 
-    else record.title.donwcase == "top #{(1..1000)}"
-      record.errors[:base] << "title cannot be #{title}"
+    else title.donwcase.include?("secret")
+      errors[:base] << "title cannot be #{title}"
     end
   end
 
