@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
 
   def title_clickbait
     binding.pry
-    title["Won't Believe"]
+    title.include?(/("Won't Believe"|"Secret")/)
       #errors[:base] << "title cannot be #{title}"
 
     #elsif title.donwcase.include?("top #{(1..1000)}")
