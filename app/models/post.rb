@@ -17,14 +17,16 @@ end
 class MyValidator < ActiveModel::Validator
   def validate(record)
     if record.title.donwcase == "won't believe"
-      record.errors[:base] << "title cannot be 'won't believe'"
-      
+      record.errors[:base] << "title cannot be '#{title}'"
+
     elsif record.title.donwcase == "secret"
-      record.errors[:base] << "title cannot be 'secret'"
-      
+      record.errors[:base] << "title cannot be '#{title}'"
+
     elsif record.title.donwcase == "guess"
-      record.errors[:base] << "title cannot be 'guess'"
+      record.errors[:base] << "title cannot be '#{title}'"
+
+    elsif record.title.donwcase == "top #{(1..1000)}"
+      record.errors[:base] << "title cannot be '#{title}'"
     end
   end
 end
- 
