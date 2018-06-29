@@ -3,11 +3,11 @@ class Post < ActiveRecord::Base
   validates :content, length: { minimum: 100 }
   validates :summary, length: { maximum: 50 }
   validates :category, inclusion: { in: %w(Fiction) }
-  validate_with MyValidator
+  validate  :myvalidator
 
   private
 
-  def MyValidator(record)
+  def myvalidator
     if record.title.donwcase.include?("won't believe")
       record.errors[:base] << "title cannot be '#{title}'"
 
