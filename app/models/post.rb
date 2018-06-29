@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
 
     #else title && !title.include?("Secret")
     #  errors[:base] << "title cannot be #{title}"
-    #end
+    end
   end
 
 end
