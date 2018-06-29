@@ -9,16 +9,16 @@ class Post < ActiveRecord::Base
 
   def myvalidator
     if record.title.donwcase.include?("won't believe")
-      record.errors[:base] << "title cannot be '#{title}'"
+      errors[:base] << "title cannot be #{title}"
 
     elsif record.title.donwcase == "secret"
-      record.errors[:base] << "title cannot be '#{title}'"
+      record.errors[:base] << "title cannot be #{title}"
 
     elsif record.title.donwcase == "guess"
-      record.errors[:base] << "title cannot be '#{title}'"
+      record.errors[:base] << "title cannot be #{title}"
 
     else record.title.donwcase == "top #{(1..1000)}"
-      record.errors[:base] << "title cannot be '#{title}'"
+      record.errors[:base] << "title cannot be #{title}"
     end
   end
 
